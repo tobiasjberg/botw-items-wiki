@@ -1,3 +1,4 @@
+/* Global styles */
 * {
   box-sizing: border-box;
 }
@@ -8,50 +9,6 @@ body {
   margin: 0;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #222;
-}
-
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-section {
-  margin-bottom: 5rem;
-}
-
-header, main, footer {
-  padding: 0 1rem;
-}
-
-header {
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #eaeaea;
-}
-
-footer {
-  width: 100%;
-  border-top: 1px solid #eaeaea;
-}
-
-.heroSection {
-  background-image: url('https://wallpapercave.com/wp/wp3277298.jpg');
-  margin: 0 -1rem 5rem;
-  background-size: cover;
-}
-
-.heroText {
-  background-color: rgba(223,223,223,0.7);
-  padding: 3rem;
-}
-
-.pageTwoColumn {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 p a {
@@ -140,23 +97,6 @@ dd {
   font-size: 2rem;
 }
 
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: grid;
-  max-width: 800px;
-  margin: auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-}
-
 .button {
   padding: 1rem;
   text-align: left;
@@ -219,7 +159,65 @@ code {
 .logo {
   height: 1em;
 }
+/* end Global styles */
 
+/* Page Layout */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+header, main, footer {
+  padding: 0 1rem;
+}
+
+header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+footer {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+}
+
+section {
+  margin-bottom: 5rem;
+}
+
+.pageTwoColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid {
+  display: grid;
+  max-width: 800px;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+/* end Page Layout */
+
+/* Home Page */
+.heroSection {
+  background-image: url('https://wallpapercave.com/wp/wp3277298.jpg');
+  margin: 0 -1rem 5rem;
+  background-size: cover;
+}
+
+.heroText {
+  background-color: rgba(223,223,223,0.7);
+  padding: 3rem;
+}
+/* end Home Page */
+
+/* Media Queries */
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -231,3 +229,4 @@ code {
     grid-template-columns: 1fr;
   }
 }
+/* end Media Queries */
