@@ -58,60 +58,9 @@ export default function ItemPage({itemData}) {
             <p>{itemData.description}</p>
           }
           <dl>
-            {itemData.common_locations != null &&
-              <div className="dlRow">
-                <dt>Common Locations</dt>
-                <dd>
-                  <ul className="noBulletList">
-                    {itemData.common_locations.map((location, index) => (
-                      <li key={index}>{titleCase(location)}</li>
-                    ))}
-                  </ul>
-                </dd>
-              </div>
-            }
-            {itemData.drops != null &&
-              <div className="dlRow">
-                <dt>Drops</dt>
-                <dd>
-                  <ul className="noBulletList">
-                    {itemData.drops.map((drop, index) => (
-                      <li key={index}>{titleCase(drop)}</li>
-                    ))}
-                  </ul>
-                </dd>
-              </div>
-            }
-            {itemData.cooking_effect != null &&
-              <div className="dlRow">
-                <dt>Cooking Effect</dt>
-                <dd>{itemData.cooking_effect}</dd>
-              </div>
-            }
-            {itemData.hearts_recovered != null &&
-              <div className="dlRow">
-                <dt>Hearts Recovered</dt>
-                <dd>{itemData.hearts_recovered}</dd>
-              </div>
-            }
-            {itemData.attack != null &&
-              <div className="dlRow">
-                <dt>Attack</dt>
-                <dd>{itemData.attack}</dd>
-              </div>
-            }
-            {itemData.defense != null &&
-              <div className="dlRow">
-                <dt>Defense</dt>
-                <dd>{itemData.defense}</dd>
-              </div>
-            }
-          </dl>
-          <dl>
-            <h4>Test DL</h4>
-              {Object.entries(itemData).map(([label, value], index) => (
-                <DescriptiveListRow key={index} label={label} value={value} />
-              ))}
+            {Object.entries(itemData).map(([label, value], index) => (
+              <DescriptiveListRow key={index} label={label} value={value} />
+            ))}
           </dl>
         </div>
       </div>
