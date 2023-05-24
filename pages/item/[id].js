@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../../components/layout'
 import { titleCase } from '../../utils/utils'
+import DescriptiveListRow from '../../components/DescriptiveListRow'
 
 export async function getStaticPaths() {
   const res = await fetch('https://botw-compendium.herokuapp.com/api/v2')
@@ -46,7 +47,7 @@ export default function ItemPage({itemData}) {
         <title>{titleCase(itemData.name)} - BOTW Items Wiki</title>
       </Head>
       <div className="pageTwoColumn">
-        <div>
+        <div className="imageColumn">
           {itemData.image &&
             <img src={itemData.image} alt={altText} />
           }
@@ -62,8 +63,8 @@ export default function ItemPage({itemData}) {
                 <dt>Common Locations</dt>
                 <dd>
                   <ul className="noBulletList">
-                    {itemData.common_locations.map((location) => (
-                      <li>{titleCase(location)}</li>
+                    {itemData.common_locations.map((location, index) => (
+                      <li key={index}>{titleCase(location)}</li>
                     ))}
                   </ul>
                 </dd>
@@ -74,8 +75,8 @@ export default function ItemPage({itemData}) {
                 <dt>Drops</dt>
                 <dd>
                   <ul className="noBulletList">
-                    {itemData.drops.map((drop) => (
-                      <li>{titleCase(drop)}</li>
+                    {itemData.drops.map((drop, index) => (
+                      <li key={index}>{titleCase(drop)}</li>
                     ))}
                   </ul>
                 </dd>
@@ -93,12 +94,24 @@ export default function ItemPage({itemData}) {
                 <dd>{itemData.hearts_recovered}</dd>
               </div>
             }
+            {itemData.attack != null &&
+              <div className="dlRow">
+                <dt>Attack</dt>
+                <dd>{itemData.attack}</dd>
+              </div>
+            }
             {itemData.defense != null &&
               <div className="dlRow">
                 <dt>Defense</dt>
                 <dd>{itemData.defense}</dd>
               </div>
             }
+          </dl>
+          <dl>
+            <h4>Test DL</h4>
+              {Object.entries(itemData).map(([label, value], index) => (
+                <DescriptiveListRow key={index} label={label} value={value} />
+              ))}
           </dl>
         </div>
       </div>

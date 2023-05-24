@@ -195,6 +195,11 @@ section {
   grid-template-columns: 1fr 1fr;
 }
 
+.imageColumn {
+  text-align: center;
+  padding: 2rem;
+}
+
 .grid {
   display: grid;
   max-width: 800px;
