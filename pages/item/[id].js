@@ -64,7 +64,7 @@ export default function ItemPage({itemData}) {
           </dl>
         </div>
       </div>
-      <p>Back to <Link href={`/${itemData.category.toLowerCase()}`}><a>Category - <span>{titleCase(itemData.category)}</span></a></Link></p>
+      <p>Back to <Link href={`/${itemData.category.toLowerCase()}`}>Category -<span>{titleCase(itemData.category)}</span></Link></p>
     </Layout>
   );
 };

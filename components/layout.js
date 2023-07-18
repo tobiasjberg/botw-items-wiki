@@ -8,7 +8,7 @@ export default function Layout({ children }) {
         <link rel="stylesheet" href="/components/layout.css" />
       </Head>
       <header>
-        <Link href="/"><a>LoZ:BotW Wiki</a></Link>
+        <Link href="/">LoZ:BotW Wiki</Link>
       </header>
       <main>
         {children}

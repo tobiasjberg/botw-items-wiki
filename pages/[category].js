@@ -43,7 +43,7 @@ export default function ItemPage({itemData, category}) {
           <Card name={name} id={id} image={image}  />
         ))}
       </div>
-      <Link href="/"><a>Home</a></Link>
+      <Link href="/">Home</Link>
     </Layout>
   );
 };

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout'
+import Script from 'next/script'
 
 export async function getStaticProps() {
   const categoriesarray = ["creatures",  "equipment",  "materials",  "monsters",  "treasure"]
@@ -14,8 +15,17 @@ export async function getStaticProps() {
 export default function Home({ categoriesarray }) {
   return (
     <Layout>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-K8X8JPQ84L" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+          gtag('config', 'G-K8X8JPQ84L');
+        `}
+      </Script>
       <Head>
-        <title>BOTW Items Wiki</title>
+          <title>BOTW Items Wiki</title>
       </Head>
       <section className="heroSection">
         <div className="heroText">
@@ -29,12 +39,12 @@ export default function Home({ categoriesarray }) {
         <h2 className="sectionTitle">Browse by Category</h2>
         <div className="grid">
           {categoriesarray.map((title) => (
-            <Link href={`/${title.toLowerCase()}`}><a className="button">
+            (<Link href={`/${title.toLowerCase()}`} className="button">
               <span>{title.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</span>
-            </a></Link>
+            </Link>)
           ))}
         </div>
       </section>
     </Layout>
-  )
+  );
 }
